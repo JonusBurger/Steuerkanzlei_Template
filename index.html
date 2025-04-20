@@ -3,154 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusterSteuer Kanzlei | Steuerberatung in [Stadt]</title>
-    <meta name="description" content="Professionelle Steuerberatung und Buchhaltung für Unternehmen und Privatpersonen in [Stadt]. Ihr zuverlässiger Partner für alle steuerlichen Angelegenheiten.">
+    <title>Fiscalis | Moderne Steuerberatung</title>
+    <meta name="description" content="Innovative Steuerberatung mit klarem Fokus auf Ihre Bedürfnisse. Digital, präzise und persönlich.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Grundlegende Stile */
         :root {
-            --primary-color: #005f87;
-            --secondary-color: #e6f2f8;
-            --accent-color: #ff6b00;
-            --text-color: #333333;
-            --light-gray: #f5f5f5;
+            --primary: #0066CC; /* Apple-blau */
+            --primary-dark: #0052A3;
+            --text: #1D1D1F;
+            --text-light: #86868B;
+            --background: #FFFFFF;
+            --background-light: #F5F5F7;
+            --border: #D2D2D7;
+            --success: #34C759;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
         }
         
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
         
         /* Header */
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
         }
         
-        .header-container {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 60px;
         }
         
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
         }
         
-        nav ul {
+        .nav-links {
             display: flex;
             list-style: none;
         }
         
-        nav ul li {
-            margin-left: 1.5rem;
+        .nav-links li {
+            margin-left: 30px;
         }
         
-        nav ul li a {
-            color: white;
+        .nav-links a {
+            color: var(--text);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            position: relative;
         }
         
-        /* Hero Bereich */
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.2s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
         .hero {
-            background-color: var(--secondary-color);
-            padding: 3rem 0;
+            padding: 120px 0 80px;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
         }
         
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: 500;
             text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.2s;
+            font-size: 1rem;
         }
         
-        .cta-button:hover {
-            background-color: #e05d00;
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 1px solid var(--primary);
         }
         
-        /* Dienstleistungen */
-        .services {
-            padding: 4rem 0;
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--background-light);
+        }
+        
+        /* Services */
+        .section {
+            padding: 100px 0;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 60px;
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
         
         .service-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            background-color: var(--background);
+            border-radius: 18px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .service-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
         }
         
         .service-card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
-        /* Über uns */
+        .service-card p {
+            color: var(--text-light);
+        }
+        
+        /* About */
         .about {
-            background-color: var(--light-gray);
-            padding: 4rem 0;
+            background-color: var(--background-light);
         }
         
         .about-content {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            gap: 60px;
         }
         
         .about-text {
             flex: 1;
         }
         
+        .about-text h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
         .about-image {
             flex: 1;
-            border-radius: 8px;
+            border-radius: 18px;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .about-image img {
@@ -160,256 +250,419 @@
         }
         
         /* Team */
-        .team {
-            padding: 4rem 0;
-        }
-        
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 40px;
         }
         
         .team-member {
             text-align: center;
         }
         
-        .team-member img {
-            width: 150px;
-            height: 150px;
+        .team-member-image {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
-            border: 3px solid var(--secondary-color);
+            margin: 0 auto 20px;
+            border: 5px solid var(--background);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        /* Kontakt */
-        .contact {
-            background-color: var(--secondary-color);
-            padding: 4rem 0;
+        .team-member h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
         
+        .team-member p {
+            color: var(--text-light);
+        }
+        
+        /* Contact */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 60px;
         }
         
         .contact-info h3 {
-            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary);
         }
         
         .contact-form input,
-        .contact-form textarea {
+        .contact-form textarea,
+        .contact-form select {
             width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
         }
         
         .contact-form button {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
+            width: 100%;
         }
         
         /* Footer */
         footer {
-            background-color: var(--primary-color);
+            background-color: var(--text);
             color: white;
-            padding: 2rem 0;
-            text-align: center;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
         }
         
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
         }
         
         .footer-links a {
-            color: white;
+            color: #86868B;
             text-decoration: none;
+            transition: color 0.2s;
         }
         
-        /* Responsive Anpassungen */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-            }
-            
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            color: #86868B;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
             .about-content {
                 flex-direction: column;
             }
             
+            .about-image {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
             .contact-container {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 90px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header mit Navigation -->
+    <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div class="logo">MusterSteuer Kanzlei</div>
-            <nav>
-                <ul>
-                    <li><a href="#services">Leistungen</a></li>
-                    <li><a href="#about">Über uns</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                </ul>
-            </nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Fiscalis</a>
+            <button class="mobile-menu-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#about">Philosophie</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
         </div>
     </header>
-    
-    <!-- Hero Bereich -->
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Ihre kompetente Steuerberatung in [Stadt]</h1>
-            <p>Wir bieten maßgeschneiderte Lösungen für Ihre steuerlichen Angelegenheiten. Ob Unternehmen oder Privatperson - wir finden die optimale Strategie für Sie.</p>
-            <a href="#contact" class="cta-button">Kontakt aufnehmen</a>
+            <h1>Steuerberatung, die mitdenkt</h1>
+            <p>Digitale Lösungen mit menschlicher Expertise für Unternehmen und Privatpersonen. Präzise, transparent und auf Ihre Ziele ausgerichtet.</p>
+            <div class="btn-container">
+                <a href="#contact" class="btn btn-primary">Termin vereinbaren</a>
+                <a href="#services" class="btn btn-secondary">Unsere Leistungen</a>
+            </div>
         </div>
     </section>
-    
-    <!-- Dienstleistungen -->
-    <section id="services" class="services">
+
+    <!-- Services -->
+    <section id="services" class="section">
         <div class="container">
-            <h2 class="section-title">Unsere Leistungen</h2>
+            <h2 class="section-title">Was wir bieten</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Steuererklärung</h3>
-                    <p>Professionelle Erstellung Ihrer Einkommensteuererklärung mit maximaler Steuerersparnis.</p>
+                    <div class="service-icon">📊</div>
+                    <h3>Strategische Steuerplanung</h3>
+                    <p>Individuelle Konzepte zur Steueroptimierung, die langfristig Ihre finanziellen Ziele unterstützen.</p>
                 </div>
                 <div class="service-card">
+                    <div class="service-icon">🏢</div>
                     <h3>Unternehmensberatung</h3>
-                    <p>Umfassende steuerliche Beratung für Unternehmen jeder Größe und Branche.</p>
+                    <p>Ganzheitliche Betreuung von der Gründung bis zur internationalen Expansion.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Buchhaltung</h3>
-                    <p>Lassen Sie uns Ihre Buchhaltung übernehmen - zuverlässig und termingerecht.</p>
+                    <div class="service-icon">📑</div>
+                    <h3>Digitale Buchhaltung</h3>
+                    <p>Moderne Buchführungslösungen mit Echtzeit-Einblick in Ihre Finanzdaten.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Lohnbuchhaltung</h3>
-                    <p>Entlasten Sie sich von der Lohnabrechnung - wir übernehmen diese Aufgabe für Sie.</p>
+                    <div class="service-icon">👨‍💼</div>
+                    <h3>Lohn & Gehalt</h3>
+                    <p>Zuverlässige Lohnabrechnung und Personaladministration aus einer Hand.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Betriebsprüfung</h3>
-                    <p>Vorbereitung und Begleitung bei Betriebsprüfungen durch das Finanzamt.</p>
+                    <div class="service-icon">🔍</div>
+                    <h3>Betriebsprüfungsbegleitung</h3>
+                    <p>Professionelle Vertretung und Vorbereitung für Finanzamtprüfungen.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Erbschaftssteuer</h3>
-                    <p>Beratung und Planung in Erbschafts- und Schenkungssteuerangelegenheiten.</p>
+                    <div class="service-icon">🏠</div>
+                    <h3>Erbschaft & Vermögen</h3>
+                    <p>Nachhaltige Gestaltung von Vermögensübergängen und Familienstiftungen.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Über uns -->
-    <section id="about" class="about">
+
+    <!-- About -->
+    <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">Über uns</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Die MusterSteuer Kanzlei steht seit über 20 Jahren für kompetente und zuverlässige Steuerberatung in [Stadt]. Unser Team aus erfahrenen Steuerberatern und Wirtschaftsprüfern begleitet Sie in allen steuerlichen Fragen.</p>
-                    <p>Wir verstehen uns als Partner unserer Mandanten und entwickeln individuelle Lösungen, die genau auf Ihre Bedürfnisse zugeschnitten sind. Unser Ziel ist es, Sie steuerlich optimal zu positionieren und Ihnen wertvolle Zeit zu sparen.</p>
-                    <p>Durch kontinuierliche Fortbildung und den Einsatz modernster Technologien garantieren wir höchste Qualität und Effizienz in unserer Arbeit.</p>
+                    <h2>Unsere Philosophie</h2>
+                    <p>Bei Fiscalis verbinden wir steuerliche Expertise mit digitalen Lösungen, die Ihren Arbeitsalltag vereinfachen. Wir glauben, dass Steuerberatung mehr sein sollte als nur Zahlen - sie sollte Ihre Ziele verstehen und unterstützen.</p>
+                    <p>Unser Ansatz kombiniert präzise Analysen mit klarer Kommunikation. Komplexe Sachverhalte erklären wir verständlich, damit Sie fundierte Entscheidungen treffen können.</p>
+                    <p>Durch kontinuierliche Investitionen in Technologie und Fortbildung garantieren wir Lösungen auf aktuellem rechtlichen und technischen Stand.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://via.placeholder.com/600x400" alt="Büro der MusterSteuer Kanzlei">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Modernes Büro">
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Team -->
-    <section id="team" class="team">
+    <section id="team" class="section">
         <div class="container">
             <h2 class="section-title">Unser Team</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Max Mustermann">
-                    <h3>Max Mustermann</h3>
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Dr. Michael Bauer" class="team-member-image">
+                    <h3>Dr. Michael Bauer</h3>
                     <p>Steuerberater, Wirtschaftsprüfer</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Erika Musterfrau">
-                    <h3>Erika Musterfrau</h3>
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Sarah Meier" class="team-member-image">
+                    <h3>Sarah Meier</h3>
                     <p>Steuerberaterin</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Thomas Beispiel">
-                    <h3>Thomas Beispiel</h3>
-                    <p>Steuerfachangestellter</p>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Thomas Weber" class="team-member-image">
+                    <h3>Thomas Weber</h3>
+                    <p>Steuerfachwirt</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/150" alt="Anna Test">
-                    <h3>Anna Test</h3>
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Julia Schmidt" class="team-member-image">
+                    <h3>Julia Schmidt</h3>
                     <p>Buchhaltungsexpertin</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Kontakt -->
-    <section id="contact" class="contact">
+
+    <!-- Contact -->
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Kontakt</h2>
+            <h2 class="section-title">Kontakt aufnehmen</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>So erreichen Sie uns</h3>
-                    <p><strong>MusterSteuer Kanzlei</strong><br>
-                    Steuerberatungsgesellschaft mbH</p>
-                    <p>Musterstraße 123<br>
-                    12345 Musterstadt</p>
-                    <p>Telefon: 01234 567890<br>
-                    E-Mail: info@mustersteuer.de</p>
-                    <p><strong>Öffnungszeiten:</strong><br>
-                    Mo-Do: 8:00 - 17:00 Uhr<br>
-                    Fr: 8:00 - 15:00 Uhr</p>
+                    <h3>Lassen Sie uns sprechen</h3>
+                    <div class="contact-details">
+                        <p><i>📌</i> Fiscalis GmbH<br>Steuerberatungsgesellschaft<br>Musterstraße 123<br>10115 Berlin</p>
+                        <p><i>📞</i> +49 30 1234567</p>
+                        <p><i>✉️</i> kontakt@fiscalis.de</p>
+                        <p><i>🕒</i> Mo-Do: 8:00-18:00<br>Fr: 8:00-15:00</p>
+                    </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Schreiben Sie uns</h3>
-                    <form action="#" method="POST">
-                        <input type="text" name="name" placeholder="Ihr Name" required>
-                        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
-                        <input type="tel" name="phone" placeholder="Ihre Telefonnummer">
-                        <select name="subject" required>
-                            <option value="" disabled selected>Betreff auswählen</option>
-                            <option value="steuererklaerung">Steuererklärung</option>
-                            <option value="unternehmensberatung">Unternehmensberatung</option>
-                            <option value="buchhaltung">Buchhaltung</option>
-                            <option value="sonstiges">Sonstiges</option>
-                        </select>
-                        <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-                        <button type="submit">Nachricht senden</button>
-                    </form>
-                </div>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Ihr Name" required>
+                    <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+                    <input type="tel" name="phone" placeholder="Telefon (optional)">
+                    <select name="subject" required>
+                        <option value="" disabled selected>Betreff auswählen</option>
+                        <option value="beratung">Erstberatung</option>
+                        <option value="unternehmen">Unternehmensservice</option>
+                        <option value="privat">Private Steuererklärung</option>
+                        <option value="karriere">Karriere</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                    <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
+                    <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                </form>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="#">Impressum</a>
-                <a href="#">Datenschutz</a>
-                <a href="#">AGB</a>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Fiscalis</h4>
+                    <p>Moderne Steuerberatung mit digitalen Lösungen und persönlicher Betreuung in Berlin.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Leistungen</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Für Unternehmen</a></li>
+                        <li><a href="#">Für Privatpersonen</a></li>
+                        <li><a href="#">Internationale Steuerplanung</a></li>
+                        <li><a href="#">Digitale Buchhaltung</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Über uns</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Philosophie</a></li>
+                        <li><a href="#">Karriere</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; 2023 MusterSteuer Kanzlei. Alle Rechte vorbehalten.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fiscalis GmbH. Alle Rechte vorbehalten.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Responsive adjustment
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
