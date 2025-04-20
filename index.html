@@ -151,6 +151,162 @@
         .btn-primary:hover {
             background-color: var(--primary-dark);
             transform: translateY(-1px);
+        }<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yildirim Steuerkanzlei | Steuerberatung in Frankfurt-Fechenheim</title>
+    <meta name="description" content="Professionelle Steuerberatung für Unternehmen in Frankfurt-Fechenheim. Spezialisiert auf Buchhaltung, Körperschaftsteuer und Gewerbesteuer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #0052A3;
+            --text: #1D1D1F;
+            --text-light: #86868B;
+            --background: #FFFFFF;
+            --background-light: #F5F5F7;
+            --border: #D2D2D7;
+            --success: #34C759;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.2s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 1px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
         }
         
         .btn-secondary {
@@ -458,7 +614,7 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Fiscalis</a>
+            <a href="#" class="logo">Yildirim Steuerkanzlei</a>
             <button class="mobile-menu-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -468,7 +624,7 @@
             </button>
             <ul class="nav-links">
                 <li><a href="#services">Leistungen</a></li>
-                <li><a href="#about">Philosophie</a></li>
+                <li><a href="#about">Über uns</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
@@ -478,11 +634,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Steuerberatung, die mitdenkt</h1>
-            <p>Digitale Lösungen mit menschlicher Expertise für Unternehmen und Privatpersonen. Präzise, transparent und auf Ihre Ziele ausgerichtet.</p>
+            <h1>Steuerberatung für Unternehmen in Frankfurt-Fechenheim</h1>
+            <p>Spezialisiert auf Buchhaltung, Körperschaftsteuer und Gewerbesteuer - damit Sie sich auf Ihr Kerngeschäft konzentrieren können.</p>
             <div class="btn-container">
-                <a href="#contact" class="btn btn-primary">Termin vereinbaren</a>
-                <a href="#services" class="btn btn-secondary">Unsere Leistungen</a>
+                <a href="#contact" class="btn btn-primary">Kostenlose Erstberatung</a>
+                <a href="#services" class="btn btn-secondary">Unsere Expertise</a>
             </div>
         </div>
     </section>
@@ -490,37 +646,37 @@
     <!-- Services -->
     <section id="services" class="section">
         <div class="container">
-            <h2 class="section-title">Was wir bieten</h2>
+            <h2 class="section-title">Unsere Kernleistungen</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">📊</div>
-                    <h3>Strategische Steuerplanung</h3>
-                    <p>Individuelle Konzepte zur Steueroptimierung, die langfristig Ihre finanziellen Ziele unterstützen.</p>
+                    <h3>Buchhaltung & Finanzbuchhaltung</h3>
+                    <p>Lückenlose, ordnungsgemäße Buchführung nach HGB und Steuerrecht - digital und effizient.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏢</div>
-                    <h3>Unternehmensberatung</h3>
-                    <p>Ganzheitliche Betreuung von der Gründung bis zur internationalen Expansion.</p>
+                    <h3>Körperschaftsteuer</h3>
+                    <p>Optimale Gestaltung Ihrer Körperschaftsteuer von der Berechnung bis zur Erklärung.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📑</div>
-                    <h3>Digitale Buchhaltung</h3>
-                    <p>Moderne Buchführungslösungen mit Echtzeit-Einblick in Ihre Finanzdaten.</p>
+                    <h3>Gewerbesteuer</h3>
+                    <p>Strategische Planung und Berechnung Ihrer Gewerbesteuer unter Berücksichtigung aller Freibeträge.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">👨‍💼</div>
-                    <h3>Lohn & Gehalt</h3>
-                    <p>Zuverlässige Lohnabrechnung und Personaladministration aus einer Hand.</p>
+                    <h3>Lohnbuchhaltung</h3>
+                    <p>Zuverlässige Lohnabrechnung inkl. aller Sozialversicherungsmeldungen und Jahresabschlussarbeiten.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔍</div>
                     <h3>Betriebsprüfungsbegleitung</h3>
-                    <p>Professionelle Vertretung und Vorbereitung für Finanzamtprüfungen.</p>
+                    <p>Vorbereitung, Begleitung und Vertretung bei Betriebsprüfungen durch das Finanzamt.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Erbschaft & Vermögen</h3>
-                    <p>Nachhaltige Gestaltung von Vermögensübergängen und Familienstiftungen.</p>
+                    <div class="service-icon">📈</div>
+                    <h3>Jahresabschluss</h3>
+                    <p>Erstellung von Jahresabschlüssen nach HGB mit Gewinn- und Verlustrechnung sowie Bilanz.</p>
                 </div>
             </div>
         </div>
@@ -531,13 +687,13 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Unsere Philosophie</h2>
-                    <p>Bei Fiscalis verbinden wir steuerliche Expertise mit digitalen Lösungen, die Ihren Arbeitsalltag vereinfachen. Wir glauben, dass Steuerberatung mehr sein sollte als nur Zahlen - sie sollte Ihre Ziele verstehen und unterstützen.</p>
-                    <p>Unser Ansatz kombiniert präzise Analysen mit klarer Kommunikation. Komplexe Sachverhalte erklären wir verständlich, damit Sie fundierte Entscheidungen treffen können.</p>
-                    <p>Durch kontinuierliche Investitionen in Technologie und Fortbildung garantieren wir Lösungen auf aktuellem rechtlichen und technischen Stand.</p>
+                    <h2>Ihre Steuerkanzlei in Frankfurt-Fechenheim</h2>
+                    <p>Die Yildirim Steuerkanzlei steht für kompetente und zuverlässige Steuerberatung mit Fokus auf Unternehmen aller Größen. Unser Team unterstützt Sie bei allen steuerlichen Fragestellungen - besonders im Bereich Buchhaltung, Körperschaftsteuer und Gewerbesteuer.</p>
+                    <p>Wir verstehen uns als Partner unserer Mandanten und entwickeln individuelle Lösungen, die genau auf Ihre betrieblichen Bedürfnisse zugeschnitten sind. Unser Ziel ist es, Sie steuerlich optimal zu positionieren und Ihnen wertvolle Zeit für Ihr Kerngeschäft zu sparen.</p>
+                    <p>Durch kontinuierliche Fortbildung und den Einsatz modernster Buchhaltungssoftware garantieren wir höchste Qualität und Effizienz in unserer Arbeit.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Modernes Büro">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Yildirim Steuerkanzlei in Frankfurt-Fechenheim">
                 </div>
             </div>
         </div>
@@ -549,24 +705,19 @@
             <h2 class="section-title">Unser Team</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Dr. Michael Bauer" class="team-member-image">
-                    <h3>Dr. Michael Bauer</h3>
-                    <p>Steuerberater, Wirtschaftsprüfer</p>
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Mustafa Yildirim" class="team-member-image">
+                    <h3>Mustafa Yildirim</h3>
+                    <p>Steuerberater</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Sarah Meier" class="team-member-image">
-                    <h3>Sarah Meier</h3>
-                    <p>Steuerberaterin</p>
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Aylin Yildirim" class="team-member-image">
+                    <h3>Aylin Yildirim</h3>
+                    <p>Steuerfachangestellte</p>
                 </div>
                 <div class="team-member">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Thomas Weber" class="team-member-image">
                     <h3>Thomas Weber</h3>
-                    <p>Steuerfachwirt</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Julia Schmidt" class="team-member-image">
-                    <h3>Julia Schmidt</h3>
-                    <p>Buchhaltungsexpertin</p>
+                    <p>Buchhaltungsexperte</p>
                 </div>
             </div>
         </div>
@@ -575,15 +726,15 @@
     <!-- Contact -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Kontakt aufnehmen</h2>
+            <h2 class="section-title">Kontaktieren Sie uns</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Lassen Sie uns sprechen</h3>
+                    <h3>Yildirim Steuerkanzlei</h3>
                     <div class="contact-details">
-                        <p><i>📌</i> Fiscalis GmbH<br>Steuerberatungsgesellschaft<br>Musterstraße 123<br>10115 Berlin</p>
-                        <p><i>📞</i> +49 30 1234567</p>
-                        <p><i>✉️</i> kontakt@fiscalis.de</p>
-                        <p><i>🕒</i> Mo-Do: 8:00-18:00<br>Fr: 8:00-15:00</p>
+                        <p><i>📌</i> Musterstraße 45<br>60386 Frankfurt-Fechenheim</p>
+                        <p><i>📞</i> +49 69 12345678</p>
+                        <p><i>✉️</i> info@yildirim-steuerkanzlei.de</p>
+                        <p><i>🕒</i> Mo-Do: 8:30-17:00 Uhr<br>Fr: 8:30-15:00 Uhr</p>
                     </div>
                 </div>
                 <form class="contact-form">
@@ -593,9 +744,9 @@
                     <select name="subject" required>
                         <option value="" disabled selected>Betreff auswählen</option>
                         <option value="beratung">Erstberatung</option>
-                        <option value="unternehmen">Unternehmensservice</option>
-                        <option value="privat">Private Steuererklärung</option>
-                        <option value="karriere">Karriere</option>
+                        <option value="buchhaltung">Buchhaltung</option>
+                        <option value="koerperschaftsteuer">Körperschaftsteuer</option>
+                        <option value="gewerbesteuer">Gewerbesteuer</option>
                         <option value="sonstiges">Sonstiges</option>
                     </select>
                     <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
@@ -610,38 +761,38 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h4>Fiscalis</h4>
-                    <p>Moderne Steuerberatung mit digitalen Lösungen und persönlicher Betreuung in Berlin.</p>
+                    <h4>Yildirim Steuerkanzlei</h4>
+                    <p>Ihr kompetenter Partner für Steuerberatung und Buchhaltung in Frankfurt-Fechenheim.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Leistungen</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Für Unternehmen</a></li>
-                        <li><a href="#">Für Privatpersonen</a></li>
-                        <li><a href="#">Internationale Steuerplanung</a></li>
-                        <li><a href="#">Digitale Buchhaltung</a></li>
+                        <li><a href="#services">Buchhaltung</a></li>
+                        <li><a href="#services">Körperschaftsteuer</a></li>
+                        <li><a href="#services">Gewerbesteuer</a></li>
+                        <li><a href="#services">Lohnbuchhaltung</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Über uns</h4>
+                    <h4>Informationen</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Philosophie</a></li>
-                        <li><a href="#">Karriere</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#about">Über uns</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                        <li><a href="#">Datenschutz</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Rechtliches</h4>
                     <ul class="footer-links">
                         <li><a href="#">Impressum</a></li>
-                        <li><a href="#">Datenschutz</a></li>
                         <li><a href="#">AGB</a></li>
+                        <li><a href="#">Widerrufsrecht</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Fiscalis GmbH. Alle Rechte vorbehalten.</p>
+                <p>&copy; 2023 Yildirim Steuerkanzlei. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
