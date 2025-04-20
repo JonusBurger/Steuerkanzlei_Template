@@ -206,6 +206,15 @@ header {
     color: var(--text-light);
 }
 
+.service-bullets {
+    padding-left: 20px;
+    text-align: left;
+}
+.service-bullets li {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
 /* About */
 .about {
     background-color: var(--background-light);
